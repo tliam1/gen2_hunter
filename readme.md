@@ -149,7 +149,7 @@ The bot will begin:
 
 ## 📊 Example Discord Output
 
-```
+
 # 🤖 Bot is now online and hunting shinies!
 
 ```md
@@ -157,11 +157,10 @@ Encounters Today: 45
 Date of last Found Shiny: 2025-07-04
 Lifetime Encounters: 1523
 ```
-```
+
 
 When a shiny is found:
 
-```
 # ✨ Shiny Found!
 
 ## Encounters since last shiny: 93
@@ -172,11 +171,9 @@ Shinies Found: 4
 Date of last Found Shiny: 2025-07-05
 Lifetime Encounters: 1584
 ```
-```
 
 (Plus a screenshot image!)
 
----
 
 ## 🔧 Notes
 
