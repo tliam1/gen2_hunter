@@ -50,8 +50,10 @@ class DiscordBot(discord.Client):
                 await self.channel.send(content=msg)
 
     async def shutdown(self):
-        if hasattr(self, 'channel') and self.channel is not None:
-            await self.channel.send("⚠️ Bot is shutting down!")
+        with open("my_data.json", 'r') as file:
+            data = json.load(file)
+            if hasattr(self, 'channel') and self.channel is not None:
+                await self.channel.send(f"# ⚠️ Bot is shutting down! \n## Total sesssion encounters: {data["session_encounters"]}")
         await self.close()
 
 # Shared queue for sending messages

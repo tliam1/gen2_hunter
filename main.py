@@ -7,12 +7,10 @@ import numpy as np
 import pyautogui
 import time
 import glob
-from skimage.metrics import structural_similarity as ssim
-from PIL import Image
 from sklearn.cluster import KMeans
 from collections import Counter
 import threading
-from tracker import add_encounter_to_json, add_shiny_to_json
+from tracker import add_encounter_to_json, add_shiny_to_json, reset_session_encounters
 from dotenv import load_dotenv
 from discord_bot import run_bot, get_client, get_bot_loop, image_to_discord_file
 load_dotenv()
@@ -354,6 +352,7 @@ def analyze_for_battle_trigger(check_interval=1):
         time.sleep(check_interval)
 
 if __name__ == "__main__":
+    reset_session_encounters()
     shiny_frames, shiny_paths = load_shiny_pngs("./Shiny")
     bot_thread = threading.Thread(target=run_bot, daemon=True)
     bot_thread.start()
