@@ -2,10 +2,13 @@
 import asyncio
 import json
 from datetime import datetime
-
+import os
+from dotenv import load_dotenv
 from discord import File
 from discord_bot import get_bot_loop, message_queue
 
+load_dotenv()
+MENTION_ID = int(os.getenv("MENTION_USER_ID"))
 
 def add_encounter_to_json(filename: str = "my_data.json"):
     data = None
@@ -54,7 +57,6 @@ def add_encounter_to_json(filename: str = "my_data.json"):
     except IOError as e:
         print(f"Error saving data to file: {e}")
 
-
 def add_shiny_to_json(discord_image: File, filename: str = "my_data.json"):
     try:
         with open(filename, 'r+') as f:
@@ -62,7 +64,7 @@ def add_shiny_to_json(discord_image: File, filename: str = "my_data.json"):
             data["found_shinies"] += 1
             today = datetime.now().strftime('%Y-%m-%d')
             asyncio.run_coroutine_threadsafe(
-                message_queue.put((f"# ✨ Shiny Found!\n\n ## Encounters since last shiny: {data["encounters_since_last_shiny"]} \n\n```md\nEncounters Today: {data[today]}\nShinies Found: {data["found_shinies"]}\nDate of last Found Shiny: {data["last_found_shiny"]}\nLifetime Encounters:{data["encounters"]}```", discord_image)),
+                message_queue.put((f"<@{MENTION_ID}>\n\n # ✨ Shiny Found!\n\n ## Encounters since last shiny: {data["encounters_since_last_shiny"]} \n\n```md\nEncounters Today: {data[today]}\nShinies Found: {data["found_shinies"]}\nDate of last Found Shiny: {data["last_found_shiny"]}\nLifetime Encounters:{data["encounters"]}```", discord_image)),
                 get_bot_loop()
             )
             data["encounters_since_last_shiny"] = 0

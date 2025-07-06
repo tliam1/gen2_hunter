@@ -342,10 +342,10 @@ def analyze_for_battle_trigger(check_interval=1):
 
         with search_analysis_lock:
             screenshot = take_screenshot()
-            # These coords must be something specific to the battle scene (I use a black portion of a text box)
-            pixel = get_pixel_color(screenshot, 440, 845)
-
-            if pixel == (0, 0, 0):  # checking if said pixel is pure black
+            # These coords must be something specific to the battle scene (I use a black portion of a text box and the white portion below enemy hp bar)
+            pixel = get_pixel_color(screenshot, 440, 845) # where a black pixel is
+            white_pixel = get_pixel_color(screenshot, 600, 230) # Where a white pixel is 
+            if pixel == (0, 0, 0) and white_pixel == (255, 255, 255):  # checking if said pixel is pure black
                 print("[INFO] Battle trigger detected! Switching state.")
                 state = State.BATTLING
 
