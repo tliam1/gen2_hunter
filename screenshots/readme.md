@@ -1,0 +1,1 @@
+This stores screenshots of any found shinies!
