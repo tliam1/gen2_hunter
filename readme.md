@@ -40,17 +40,42 @@ pip install -r requirements.txt
 ```
 
 <details>
-<summary>📦 Typical dependencies</summary>
+<summary>📦 dependencies</summary>
 
 ```
-opencv-python
-numpy
-discord.py
-python-dotenv
-scikit-image
-scikit-learn
-pyautogui
-pillow
+aiohappyeyeballs==2.6.1
+aiohttp==3.12.13
+aiosignal==1.4.0
+attrs==25.3.0
+discord.py==2.5.2
+frozenlist==1.7.0
+idna==3.10
+imageio==2.37.0
+joblib==1.5.1
+lazy_loader==0.4
+MouseInfo==0.1.3
+multidict==6.6.3
+networkx==3.5
+numpy==2.3.1
+opencv-python==4.11.0.86
+packaging==25.0
+pillow==11.3.0
+propcache==0.3.2
+PyAutoGUI==0.9.54
+PyGetWindow==0.0.9
+PyMsgBox==1.0.9
+pyperclip==1.9.0
+PyRect==0.2.0
+PyScreeze==1.0.1
+python-dotenv==1.1.1
+pytweening==1.2.0
+scikit-image==0.25.2
+scikit-learn==1.7.0
+scipy==1.16.0
+threadpoolctl==3.6.0
+tifffile==2025.6.11
+typing_extensions==4.14.1
+yarl==1.20.1
 ```
 </details>
 
