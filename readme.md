@@ -199,6 +199,3 @@ Lifetime Encounters: 1584
 
 ---
 
-## 🙏 Acknowledgements
-
-Built with ❤️ using OpenCV, Discord.py, PyAutoGUI, and scikit-learn. Inspired by the hunt for shinies that never ends.
